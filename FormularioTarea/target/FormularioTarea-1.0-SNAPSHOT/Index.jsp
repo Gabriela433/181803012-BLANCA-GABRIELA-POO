@@ -9,29 +9,28 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Numero</title>
+        <title>Solicitud de numero</title>
     </head>
     <body>
         <h1>Ingresa un número</h1>
                <form method="GET">
                    
-            <input type="int" placeholder="Ingresa un numero"  name="num"pattern = "^[0-999]+"/><br>
+            <input type="int" placeholder="Ingresa un numero"  name="num"/><br>
             
              <input type="submit" name="enviar"/>
           
         </form>
-        <h1> Los datos ingresados son: </h1>
         
-        
+        <h1> Los numeros ingresados son: </h1>
         <%
             try{
                 int n = Integer.parseInt(request.getParameter("num"));
-                for (int i=0; i<=n; i++){
+                for (int i=0; i<n; i++){
                     out.println(+i);
-                 }
+            }
             }
             catch(NumberFormatException nfe){
-                out.println("Lo sentimos, necesitas llenar el campo");
+                out.println("");
             }
          %>
        
