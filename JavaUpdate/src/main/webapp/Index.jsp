@@ -28,7 +28,7 @@
                     <title>CRUD</title>
                 </head>
                 <body>
-                    <h1>Los registros en la base de datos son: </h1>
+                    <h1 class="text-center" >Los registros en la base de datos son: </h1>
                     <div class="container">
                         <table class="table table-hover">
                             <thead class=" thead-dark">
@@ -42,6 +42,7 @@
                                     <th scope="col">#</th>
                                     <th scope="col">Nombre</th>
                                     <th scope="col">Contraseña</th>
+                                    <th scope="col">Edad</th>
                               </tr>
                               
                             </thead>
@@ -51,6 +52,7 @@
                                     <th scope="row"><%=rs.getInt("id_usuario")%></th>
                                     <td><%=rs.getString("usuario")%></td>
                                     <td><%=rs.getString("password")%></td>
+                                    <th scope="row"><%=rs.getInt("Edad")%></th>
                                     <td><a class="btn btn-warning btn-block" href="formularioUsuario.jsp?id=<%=rs.getInt("id_usuario")%>"> Editar el usuario </a> </td>
                                     <td><a class="btn btn-warning btn-block" href="formularioPassword.jsp?id=<%out.print(rs.getInt("id_usuario"));%>">Editar Password</a></td>
                                     <td><a class="btn btn-danger btn-block"  href="eliminarUsuario.jsp?id=<%out.print(rs.getInt("id_usuario"));%>"> Eliminar el usuario </a> </td>

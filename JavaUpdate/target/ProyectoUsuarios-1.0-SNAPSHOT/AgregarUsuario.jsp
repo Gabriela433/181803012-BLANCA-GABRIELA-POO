@@ -19,10 +19,11 @@
         stmt = conexion.prepareStatement("INSERT INTO usuarios SET usuario=?, password=MD5(?)");
         stmt.setString(1, request.getParameter("usuario"));
         stmt.setString(2, request.getParameter("password"));
+        stmt.setInt(3, Integer.parseInt(request.getParameter("Edad")));
         if (stmt.executeUpdate() == 1) {
 %>
 <div>
-    <h3 style="text-align:center">
+    <h3 style="text-align:center; background-color: bisque">
         <font COLOR="teal">Se agrego exitosamente el registro en la base de datos</font>
     </h3>
 </div>
@@ -30,7 +31,7 @@
     }
 %>
 
-<html>
+<html  >
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
